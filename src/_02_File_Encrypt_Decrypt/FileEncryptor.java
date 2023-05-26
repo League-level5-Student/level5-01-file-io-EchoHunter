@@ -31,6 +31,11 @@ public class FileEncryptor {
 	public void run() {
 		try {
 		BufferedReader bf = new BufferedReader(new FileReader("src/_02_File_Encrypt_Decrypt/Encrypted.txt"));
+		String line = bf.readLine();
+		while(line != null){
+			l.add(line);
+			line = bf.readLine();
+		}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
