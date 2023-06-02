@@ -2,7 +2,9 @@ package _02_File_Encrypt_Decrypt;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,15 +31,32 @@ public class FileEncryptor {
 	Scanner sc = new Scanner(System.in);
 	List<String> l = new ArrayList<String>();
 	public void run() {
-		try {
-		BufferedReader bf = new BufferedReader(new FileReader("src/_02_File_Encrypt_Decrypt/Encrypted.txt"));
-		String line = bf.readLine();
-		while(line != null){
-			l.add(line);
-			line = bf.readLine();
+		Boolean noQuit = true;
+		do {
+		System.out.println("Input the information you would like encrypted, or type QUIT to exit this menu");
+		String input = sc.next();
+		if (input.equals("QUIT")) {
+			noQuit = false;
+		} else {
+			noQuit = true;
+			try {
+				FileWriter wr = new FileWriter("src/_02_File_Encrypt_Decrypt/Encrypted.txt");
+				
+				wr.write("\n" + EncryptString(input));
+				wr.close();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
-		}catch(Exception e) {
-			e.printStackTrace();
+		}while(noQuit);
+	}
+	private String EncryptString(String input) {
+		// TODO Auto-generated method stub
+		StringBuilder encrypt = new StringBuilder(input);
+		for (int i = 0; i < encrypt.length(); i++) {
+			encrypt.setCharAt(i, (char) (encrypt.charAt(i)+4));	
 		}
-		}
+		return encrypt.toString();
+	}
+	
 }
