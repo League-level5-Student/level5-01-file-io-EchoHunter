@@ -1,5 +1,10 @@
 package _02_File_Encrypt_Decrypt;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.util.Iterator;
+import java.util.Scanner;
+
 public class FileDecryptor {
 	/*
 	 * Decryption is the process of taking encoded or encrypted text or other data
@@ -19,4 +24,19 @@ public class FileDecryptor {
 	 * Create a program that opens the file created by FileEncryptor and decrypts
 	 * the message, then display it to the user in a JOptionPane.
 	 */
+	Scanner sc = new Scanner(System.in);
+	public void run() {
+		System.out.println("input the line you would like to decrypt");
+		String s = sc.nextLine();
+		int lineNum = Integer.parseInt(s);
+		try {
+			BufferedReader bf = new BufferedReader(new FileReader("src/_02_File_Encrypt_Decrypt/Encrypted.txt"));
+			for (int i = 0; i < lineNum; i++) {
+				
+			}
+		}catch(Exception e) {
+			System.out.println("Error: The line you have requested does not exist or could not be found");
+		}
+	}
 }
+
