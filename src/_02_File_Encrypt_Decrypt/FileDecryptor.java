@@ -31,12 +31,24 @@ public class FileDecryptor {
 		int lineNum = Integer.parseInt(s);
 		try {
 			BufferedReader bf = new BufferedReader(new FileReader("src/_02_File_Encrypt_Decrypt/Encrypted.txt"));
-			for (int i = 0; i < lineNum; i++) {
-				
+			for (int i = 0; i <= lineNum; i++) {
+				if(i==lineNum) {
+				System.out.println(DecryptString(bf.readLine()));
+				}else {
+					bf.readLine();
+				}
 			}
 		}catch(Exception e) {
 			System.out.println("Error: The line you have requested does not exist or could not be found");
 		}
+	}
+	private String DecryptString(String input) {
+		// TODO Auto-generated method stub
+		StringBuilder decrypt = new StringBuilder(input);
+		for (int i = 0; i < decrypt.length(); i++) {
+			decrypt.setCharAt(i, (char) (decrypt.charAt(i) - 4));
+		}
+		return decrypt.toString();
 	}
 }
 
