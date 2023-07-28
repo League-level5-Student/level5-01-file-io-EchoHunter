@@ -41,10 +41,32 @@ public class ListWindow implements ActionListener {
 		removeTask.addActionListener(this);
 		saveList.addActionListener(this);
 		loadList.addActionListener(this);
+		retrieveLast();
 		frame.setSize(786, 144);
 		frame.setVisible(true);
 	}
-
+	private void retrieveLast() {
+		String lString = "";
+		try {
+			BufferedReader br = new BufferedReader(new FileReader("src/_03_To_Do_List/saveText"));
+			lString = br.readLine();
+			while(lString != null) {
+				list.clear();
+				for (String toAdd : lString.split(", ")) {
+					if(toAdd.contains("[")) {
+						toAdd = toAdd.substring(1);
+					}if(toAdd.contains("]")) {
+						toAdd = toAdd.substring(0, toAdd.length()-1);
+					}
+					System.out.println(toAdd);
+					list.add(toAdd);
+				}
+				lString = br.readLine();
+			}
+		br.close();
+		}catch(Exception e) {
+		}
+	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
