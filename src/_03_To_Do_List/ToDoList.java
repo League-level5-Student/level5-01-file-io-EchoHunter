@@ -26,3 +26,5 @@ public class ToDoList {
 		lW.run();
 	}
 }
+
+//Copyright © 2023 Edwin Hunter

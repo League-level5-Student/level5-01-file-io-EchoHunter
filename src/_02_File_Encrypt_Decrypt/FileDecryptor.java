@@ -52,3 +52,5 @@ public class FileDecryptor {
 	}
 }
 
+
+//Copyright © 2023 Edwin Hunter

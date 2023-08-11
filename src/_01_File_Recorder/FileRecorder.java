@@ -27,3 +27,5 @@ public class FileRecorder {
 		} while (noQuit);
 	}
 }
+
+//Copyright © 2023 Edwin Hunter

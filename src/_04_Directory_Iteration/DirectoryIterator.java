@@ -31,3 +31,5 @@ public class DirectoryIterator {
 		 */
 	}
 }
+
+//Copyright © 2023 Edwin Hunter

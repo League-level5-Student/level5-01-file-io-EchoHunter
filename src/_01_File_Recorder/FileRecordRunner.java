@@ -6,3 +6,5 @@ public static void main(String[] args) {
 	f.run();
 }
 }
+
+//Copyright © 2023 Edwin Hunter

@@ -136,3 +136,5 @@ public class ListWindow implements ActionListener {
 		}
 	}
 }
+
+//Copyright © 2023 Edwin Hunter

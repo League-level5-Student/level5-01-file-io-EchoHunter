@@ -18,3 +18,5 @@ public class MinecraftCreeper {
 		this.health = 100.0;
 	}
 }
+
+//Copyright © 2023 Edwin Hunter

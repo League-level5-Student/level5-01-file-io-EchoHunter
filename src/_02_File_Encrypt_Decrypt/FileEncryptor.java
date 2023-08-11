@@ -61,3 +61,5 @@ public class FileEncryptor {
 	}
 
 }
+
+//Copyright © 2023 Edwin Hunter

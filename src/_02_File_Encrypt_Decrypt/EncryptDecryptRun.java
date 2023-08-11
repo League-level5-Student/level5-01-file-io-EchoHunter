@@ -10,3 +10,5 @@ public static void main(String[] args) {
 	decry.run();
 }
 }
+
+//Copyright © 2023 Edwin Hunter
